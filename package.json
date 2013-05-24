@@ -1,0 +1,11 @@
+{
+  "name": "gw2-bountyhunter",
+  "version": "0.1.0",
+  "repository": "https://github.com/voodoochild/gw2-bountyhunter",
+  "author": "Kriss Watt <kriss.watt@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt": "~0.4.1"
+  }
+}

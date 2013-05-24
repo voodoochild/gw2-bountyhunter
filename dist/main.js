@@ -1,0 +1,1 @@
+(function(){require.config({paths:{blc:"libs/blc",lodash:"vendor/lodash",reqwest:"vendor/reqwest"}}),require(["lodash","blc"],function(e,t){t.world_names().then(function(t){console.log(e.sortBy(e.map(t,"name")))})})})();
