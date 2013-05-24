@@ -27,6 +27,7 @@
     var gw2bh = (function() {
 
       var world_list = $('[name="world_id"]'),
+          activity = $('.activity-indicator'),
           bounty_els = $('[class^="bounty-"]'),
           loop = null;
 
@@ -62,7 +63,9 @@
       };
 
       var updateBountyStatuses = function(world_id) {
+        var completed = 0;
         if (world_id) {
+          activity.css('opacity', 1);
           _.each(bounties, function(event_id, bounty) {
             blc.events(world_id, event_id).then(function(response) {
               var el = $('.bounty-' + bounty);
@@ -74,6 +77,9 @@
                   el.attr('data-inactive', true)
                     .removeAttr('data-active');
                 }
+              }
+              if (++completed === bounty_els.length) {
+                activity.css('opacity', 0);
               }
             });
           });
@@ -107,12 +113,10 @@
 })();
 
 // add history api stuff later so that data is loaded automatically for
-// a world if it's direct linked
+// a world if it's direct linked, e.g. /bountyhunter/#2013
 
 // configure ajax timeout and display message
 
 // need a way to kill unfulfilled promises if requesting again
 
 // cache world names in localstorage if available
-
-// put a loading gif next to the world select whilst updating bounties

@@ -1,0 +1,5 @@
+v0.1.0:
+  date: 2013-05-24
+  changes:
+    - Initial release.
+    - Added an activity indicator while updating bounty state.
