@@ -2,34 +2,86 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Guild Wars 2 Bounty Hunter</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <title>GW2 Bounty Hunter</title>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700,300,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/css/main.css">
     <script src="scripts/vendor/modernizr-dev.js"></script>
   </head>
   <body>
-    <h1>Bounty Hunter</h1>
-    <h2 class="subheading">Choose a World</h2>
-    <select name="world_id" disabled></select>
-    <ul class="bounties">
-      <li class="bounty-sotzz"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#13">Sotzz the Scallywag</a></li>
-      <li class="bounty-trillia"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#15">Trillia Midwell</a></li>
-      <li class="bounty-michiele"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#4">Crusader Michiele</a></li>
-      <li class="bounty-mayana"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#1b">Big Mayana</a></li>
-      <li class="bounty-arderus"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#11">Shaman Arderus</a></li>
-      <li class="bounty-2mult"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#0">2-MULT</a></li>
-      <li class="bounty-trekksa"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#14">Tricksy Trekksa</a></li>
-      <li class="bounty-tarban"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#7">Diplomat Tarban</a></li>
-      <li class="bounty-yanonka"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#16">Yanonka the Rat Wrangler</a></li>
-      <li class="bounty-poobadoo"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#9">Poobadoo</a></li>
-      <li class="bounty-brekkabek"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#3">Brekkabek</a></li>
-      <li class="bounty-prisoner"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#10">Prisoner 1141</a></li>
-      <li class="bounty-komali"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#8">Half–Baked Komali</a></li>
-      <li class="bounty-teesa"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#6">Devious Teesa</a></li>
-      <li class="bounty-bwikki"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#2">Bookworm Bwikki</a></li>
-      <li class="bounty-felix"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#12">Short–Fuse Felix</a></li>
-      <li class="bounty-brooke"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#5">“Deputy” Brooke</a></li>
-      <li class="bounty-ander"><a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/#1">Ander “Wildman” Westward</a></li>
-    </ul>
+    <div role="main">
+      <header role="banner">
+        <h1 class="branding">GW2 Bounty Hunter</h1>
+      </head>
+      <select name="world_id" disabled>
+        <option value="0" selected>Loading Worlds…</option>
+      </select>
+      <p class="standfirst">A simple tool that shows whether or not a bounty is in combat on the chosen server.</p>
+      <p>Automatically refreshed every 20 seconds. Orange swords are shown on bounties currently in–combat.</p>
+      <ul class="bounties">
+        <li class="bounty-sotzz" data-background="1">
+          <span class="target">Sotzz the Scallywag</span>
+        </li>
+        <li class="bounty-trillia" data-background="2">
+          <span class="target">Trillia Midwell</span>
+        </li>
+        <li class="bounty-michiele" data-background="3">
+          <span class="target">Crusader Michiele</span>
+        </li>
+        <li class="bounty-mayana" data-background="4">
+          <span class="target">Big Mayana</span>
+        </li>
+        <li class="bounty-arderus" data-background="5">
+          <span class="target">Shaman Arderus</span>
+        </li>
+        <li class="bounty-2mult" data-background="6">
+          <span class="target">2-MULT</span>
+        </li>
+        <li class="bounty-trekksa" data-background="7">
+          <span class="target">Tricksy Trekksa</span>
+        </li>
+        <li class="bounty-tarban" data-background="8">
+          <span class="target">Diplomat Tarban</span>
+        </li>
+        <li class="bounty-yanonka" data-background="9">
+          <span class="target">Yanonka the Rat Wrangler</span>
+        </li>
+        <li class="bounty-poobadoo" data-background="10">
+          <span class="target">Poobadoo</span>
+        </li>
+        <li class="bounty-brekkabek" data-background="11">
+          <span class="target">Brekkabek</span>
+        </li>
+        <li class="bounty-prisoner" data-background="12">
+          <span class="target">Prisoner 1141</span>
+        </li>
+        <li class="bounty-komali" data-background="13">
+          <span class="target">Half–Baked Komali</span>
+        </li>
+        <li class="bounty-teesa" data-background="14">
+          <span class="target">Devious Teesa</span>
+        </li>
+        <li class="bounty-bwikki" data-background="15">
+          <span class="target">Bookworm Bwikki</span>
+        </li>
+        <li class="bounty-felix" data-background="16">
+          <span class="target">Short–Fuse Felix</span>
+        </li>
+        <li class="bounty-brooke" data-background="17">
+          <span class="target">“Deputy” Brooke</span>
+        </li>
+        <li class="bounty-ander" data-background="18">
+          <span class="target">Ander “Wildman” Westward</span>
+        </li>
+      </ul>
+    </div>
     <script data-main="scripts/main" src="scripts/vendor/require.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41199844-1', 'mythlan.co.uk');
+      ga('send', 'pageview');
+    </script>
   </body>
 </html>

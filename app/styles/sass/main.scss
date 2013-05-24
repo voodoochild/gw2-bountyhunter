@@ -1,0 +1,108 @@
+$sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+@import "normalize.scss";
+
+body {
+    color: #666;
+    font-family: $sans-serif;
+}
+
+select {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.875em;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    vertical-align: middle;
+    width: 220px;
+
+    &:disabled {
+        cursor: default;
+        opacity: 0.5;
+    }
+}
+
+[role="main"] {
+    margin: 0 auto;
+    width: 80%
+}
+
+.standfirst {
+    font-weight: bold;
+}
+
+.bounties {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+[class^="bounty-"] {
+    background-color: #666;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    height: 100px;
+    float: left;
+    margin-bottom: 1%;
+    margin-right: 1%;
+    position: relative;
+    width: 31.9%;
+
+    .target {
+        color: #fff;
+        font-size: 1.5em;
+        font-weight: bold;
+        line-height: 1;
+        position: absolute;
+        bottom: 0.5em; left: 0.25em;
+        z-index: 3;
+    }
+
+    &::before {
+        background-image: url(../../images/pattern.png);
+        background-position: bottom left;
+        background-repeat: no-repeat;
+        content: '';
+        display: block;
+        opacity: 0.2;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: 2;
+    }
+
+    &[data-active]::after {
+        color: orange;
+        content: '⚔';
+        display: block;
+        font-size: 3em;
+        line-height: 1;
+        position: absolute;
+        right: 0.2em; top: 0;
+        text-shadow: -1px -1px 0 #000,
+                      1px -1px 0 #000,
+                      -1px 1px 0 #000,
+                       1px 1px 0 #000;
+        z-index: 3;
+    }
+
+    // &[data-inactive]::after {
+    //     color: #ccc;
+    //     content: '•';
+    //     display: block;
+    //     font-size: 2em;
+    //     line-height: 1;
+    //     opacity: 0.5;
+    //     position: absolute;
+    //     right: 1%; top: 0;
+    //     z-index: 3;
+    // }
+}

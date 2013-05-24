@@ -26,28 +26,24 @@
 
     var gw2bh = (function() {
 
-      var subheading = $('.subheading'),
-          world_list = $('[name="world_id"]'),
+      var world_list = $('[name="world_id"]'),
+          bounty_els = $('[class^="bounty-"]'),
           loop = null;
 
       var init = function() {
         populateWorldList();
+        loadBackgroundImages();
       };
 
       var populateWorldList = function() {
-
-        // TODO: check localstorage for cached world_names
-
         blc.world_names().then(function(response) {
-
-          // TODO: cache in localstorage
-
           var t = _.template('<option value="<%= id %>"><%= name %></option>'),
               options = _.map(_.sortBy(response, 'name'), t);
 
-          options.unshift(t({ id: 0, name: '' }));
+          options.unshift(t({ id: 0, name: 'Choose a World' }));
           world_list.html(options.join('\n'))
-                    .removeAttr('disabled');
+                    .removeAttr('disabled')
+                    .val('0');
           bean.on(world_list[0], 'change', chooseWorld);
         });
       };
@@ -55,18 +51,13 @@
       var chooseWorld = function(e) {
         var world_id = parseInt(world_list.val(), 10);
         clearInterval(loop);
-
         if (world_id) {
-          subheading.html($('option[value="' + world_id + '"]').html());
           updateBountyStatuses(world_id);
-          // loop = setInterval(function() {
-          //   updateBountyStatuses(world_id);
-          // }, 10000);
+          loop = setInterval(function() {
+            updateBountyStatuses(world_id);
+          }, 20000);
         } else {
-          subheading.html('Choose a World');
-          $('.bounties li').removeAttr('data-active')
-                           .removeAttr('data-inactive')
-                           .removeAttr('data-unknown');
+          resetBounties();
         }
       };
 
@@ -75,25 +66,34 @@
           _.each(bounties, function(event_id, bounty) {
             blc.events(world_id, event_id).then(function(response) {
               var el = $('.bounty-' + bounty);
-
               if (response.events.length > 0) {
                 if (response.events[0].state === 'Active') {
                   el.attr('data-active', true)
-                    .removeAttr('data-inactive')
-                    .removeAttr('data-unknown');
+                    .removeAttr('data-inactive');
                 } else {
                   el.attr('data-inactive', true)
-                    .removeAttr('data-active')
-                    .removeAttr('data-unknown');
+                    .removeAttr('data-active');
                 }
-              } else {
-                el.attr('data-unknown', true)
-                  .removeAttr('data-active')
-                  .removeAttr('data-inactive');
               }
             });
           });
         }
+      };
+
+      var resetBounties = function() {
+        bounty_els.removeAttr('data-active')
+                  .removeAttr('data-inactive')
+                  .removeAttr('data-unknown');
+      };
+
+      var loadBackgroundImages = function() {
+        var t = _.template('url(images/<%= number %>.png)');
+        _.each(bounty_els, function(el) {
+          el = $(el);
+          if (el.data('background')) {
+            el.css('background-image', t({ number: el.data('background') }));
+          }
+        });
       };
 
       return {
@@ -106,27 +106,13 @@
   });
 })();
 
-
-// 1. get world_names, then populate and enable dropdown to select
-
-// 2. once world selected, show table of bounties with no status
-
-// 3. start polling all events every 10 seconds, show active||inactive icon
-
-// var world_id = 2013,
-//     event_id = '405DDE0F-621B-4651-9CF1-36382FEE5D88';
-
-// var event_names = blc.event_names();
-
-// blc.events(world_id, event_id).then(function(response) {
-//   var event_data = response.events[0];
-  // event_names.then(function(response) {
-  //   event_data.name = _.find(response, { 'id': event_id }).name;
-  //   console.log(event_data);
-  // });
-// });
-
 // add history api stuff later so that data is loaded automatically for
 // a world if it's direct linked
 
 // configure ajax timeout and display message
+
+// need a way to kill unfulfilled promises if requesting again
+
+// cache world names in localstorage if available
+
+// put a loading gif next to the world select whilst updating bounties
