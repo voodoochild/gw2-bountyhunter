@@ -404,13 +404,21 @@ table {
   border-spacing: 0;
 }
 
-/* line 5, ../sass/main.scss */
+/* line 6, ../sass/main.scss */
 body {
   color: #666;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 10, ../sass/main.scss */
+/* line 11, ../sass/main.scss */
+a {
+  color: #666;
+  font-weight: bold;
+  border-bottom: 1px dotted #666;
+  text-decoration: none;
+}
+
+/* line 18, ../sass/main.scss */
 select {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -428,19 +436,76 @@ select {
   vertical-align: middle;
   width: 220px;
 }
-/* line 27, ../sass/main.scss */
+/* line 35, ../sass/main.scss */
 select:disabled {
   cursor: default;
   opacity: 0.5;
 }
 
-/* line 33, ../sass/main.scss */
-[role="main"] {
+/* line 41, ../sass/main.scss */
+[role="banner"] {
+  clear: both;
+  color: #333;
   margin: 0 auto;
   width: 80%;
 }
+/* line 47, ../sass/main.scss */
+[role="banner"] .brand {
+  background-image: url(../../images/chest.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  font-size: 3em;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0.5em 0;
+  padding-right: 1em;
+}
+/* line 59, ../sass/main.scss */
+.wf-loading [role="banner"] .brand {
+  font-family: Georgia, sans-serif;
+}
+/* line 63, ../sass/main.scss */
+.wf-active [role="banner"] .brand {
+  font-family: "bree-serif", Georgia, sans-serif;
+}
 
-/* line 38, ../sass/main.scss */
+/* line 73, ../sass/main.scss */
+[role="main"] {
+  clear: both;
+  margin: 0 auto;
+  width: 80%;
+}
+/* line 78, ../sass/main.scss */
+[role="main"] .subheading {
+  font-size: 1.5em;
+  line-height: 30px;
+  margin-top: 6px;
+}
+
+/* line 85, ../sass/main.scss */
+.col {
+  float: left;
+}
+
+/* line 89, ../sass/main.scss */
+.col-1 {
+  width: 25%;
+}
+
+/* line 93, ../sass/main.scss */
+.col-2 {
+  margin-left: 2%;
+  width: 73%;
+}
+
+/* line 98, ../sass/main.scss */
+.standfirst {
+  font-weight: bold;
+}
+
+/* line 102, ../sass/main.scss */
 .activity-indicator {
   background-image: url(../../images/loading.gif);
   background-position: center right;
@@ -448,6 +513,8 @@ select:disabled {
   display: inline-block;
   font-size: 0.75em;
   font-weight: bold;
+  line-height: 30px;
+  margin-left: 2em;
   opacity: 0;
   padding-right: 20px;
   -webkit-transition: opacity 0.15s ease-in;
@@ -456,19 +523,14 @@ select:disabled {
   transition: opacity 0.15s ease-in;
 }
 
-/* line 53, ../sass/main.scss */
-.standfirst {
-  font-weight: bold;
-}
-
-/* line 57, ../sass/main.scss */
+/* line 119, ../sass/main.scss */
 .bounties {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 63, ../sass/main.scss */
+/* line 125, ../sass/main.scss */
 [class^="bounty-"] {
   background-color: #666;
   background-position: bottom left;
@@ -481,8 +543,12 @@ select:disabled {
   margin-right: 1%;
   position: relative;
   width: 31.9%;
+  -webkit-transition: opacity 0.15s ease-in;
+  -moz-transition: opacity 0.15s ease-in;
+  -o-transition: opacity 0.15s ease-in;
+  transition: opacity 0.15s ease-in;
 }
-/* line 76, ../sass/main.scss */
+/* line 142, ../sass/main.scss */
 [class^="bounty-"] .target {
   color: #fff;
   font-size: 1.5em;
@@ -491,9 +557,10 @@ select:disabled {
   position: absolute;
   bottom: 0.5em;
   left: 0.25em;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
   z-index: 3;
 }
-/* line 86, ../sass/main.scss */
+/* line 153, ../sass/main.scss */
 [class^="bounty-"]::before {
   background-image: url(../../images/pattern.png);
   background-position: bottom left;
@@ -508,7 +575,15 @@ select:disabled {
   left: 0;
   z-index: 2;
 }
-/* line 98, ../sass/main.scss */
+/* line 165, ../sass/main.scss */
+[class^="bounty-"][data-inactive] {
+  opacity: 0.7;
+}
+/* line 169, ../sass/main.scss */
+[class^="bounty-"][data-active] {
+  opacity: 1;
+}
+/* line 172, ../sass/main.scss */
 [class^="bounty-"][data-active]::after {
   color: orange;
   content: '⚔';

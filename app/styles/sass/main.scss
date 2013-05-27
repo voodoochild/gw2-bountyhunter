@@ -1,10 +1,18 @@
-$sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: Georgia, sans-serif;
 
 @import "normalize.scss";
 
 body {
     color: #666;
     font-family: $sans-serif;
+}
+
+a {
+    color: #666;
+    font-weight: bold;
+    border-bottom: 1px dotted #666;
+    text-decoration: none;
 }
 
 select {
@@ -30,9 +38,65 @@ select {
     }
 }
 
-[role="main"] {
+[role="banner"] {
+    clear: both;
+    color: #333;
     margin: 0 auto;
-    width: 80%
+    width: 80%;
+
+    .brand {
+        background-image: url(../../images/chest.png);
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        font-size: 3em;
+        font-weight: normal;
+        line-height: 1;
+        margin: 0.5em 0;
+        padding-right: 1em;
+
+        .wf-loading & {
+            font-family: $serif;
+        }
+
+        .wf-active & {
+            font-family: "bree-serif", $serif;
+        }
+    }
+
+    .tagline {
+
+    }
+}
+
+[role="main"] {
+    clear: both;
+    margin: 0 auto;
+    width: 80%;
+
+    .subheading {
+        font-size: 1.5em;
+        line-height: 30px;
+        margin-top: 6px;
+    }
+}
+
+.col {
+    float: left;
+}
+
+.col-1 {
+    width: 25%;
+}
+
+.col-2 {
+    margin-left: 2%;
+    width: 73%;
+}
+
+.standfirst {
+    font-weight: bold;
 }
 
 .activity-indicator {
@@ -42,16 +106,14 @@ select {
     display: inline-block;
     font-size: 0.75em;
     font-weight: bold;
+    line-height: 30px;
+    margin-left: 2em;
     opacity: 0;
     padding-right: 20px;
     -webkit-transition: opacity 0.15s ease-in;
     -moz-transition: opacity 0.15s ease-in;
     -o-transition: opacity 0.15s ease-in;
     transition: opacity 0.15s ease-in;
-}
-
-.standfirst {
-    font-weight: bold;
 }
 
 .bounties {
@@ -72,6 +134,10 @@ select {
     margin-right: 1%;
     position: relative;
     width: 31.9%;
+    -webkit-transition: opacity 0.15s ease-in;
+    -moz-transition: opacity 0.15s ease-in;
+    -o-transition: opacity 0.15s ease-in;
+    transition: opacity 0.15s ease-in;
 
     .target {
         color: #fff;
@@ -80,6 +146,7 @@ select {
         line-height: 1;
         position: absolute;
         bottom: 0.5em; left: 0.25em;
+        text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
         z-index: 3;
     }
 
@@ -95,18 +162,26 @@ select {
         z-index: 2;
     }
 
-    &[data-active]::after {
-        color: orange;
-        content: '⚔';
-        display: block;
-        font-size: 3em;
-        line-height: 1;
-        position: absolute;
-        right: 0.2em; top: 0;
-        text-shadow: -1px -1px 0 #000,
-                      1px -1px 0 #000,
-                      -1px 1px 0 #000,
-                       1px 1px 0 #000;
-        z-index: 3;
+    &[data-inactive] {
+        opacity: 0.7;
+    }
+
+    &[data-active] {
+        opacity: 1;
+
+        &::after {
+            color: orange;
+            content: '⚔';
+            display: block;
+            font-size: 3em;
+            line-height: 1;
+            position: absolute;
+            right: 0.2em; top: 0;
+            text-shadow: -1px -1px 0 #000,
+                          1px -1px 0 #000,
+                          -1px 1px 0 #000,
+                           1px 1px 0 #000;
+            z-index: 3;
+        }
     }
 }

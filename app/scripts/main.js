@@ -69,14 +69,13 @@
           _.each(bounties, function(event_id, bounty) {
             blc.events(world_id, event_id).then(function(response) {
               var el = $('.bounty-' + bounty);
-              if (response.events.length > 0) {
-                if (response.events[0].state === 'Active') {
+              if (response.events.length > 0 &&
+                  response.events[0].state === 'Active') {
                   el.attr('data-active', true)
                     .removeAttr('data-inactive');
-                } else {
-                  el.attr('data-inactive', true)
-                    .removeAttr('data-active');
-                }
+              } else {
+                el.attr('data-inactive', true)
+                  .removeAttr('data-active');
               }
               if (++completed === bounty_els.length) {
                 activity.css('opacity', 0);
@@ -87,9 +86,9 @@
       };
 
       var resetBounties = function() {
+        activity.css('opacity', 0);
         bounty_els.removeAttr('data-active')
-                  .removeAttr('data-inactive')
-                  .removeAttr('data-unknown');
+                  .attr('data-inactive', 'true');
       };
 
       var loadBackgroundImages = function() {

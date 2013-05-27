@@ -2,78 +2,98 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>GW2 Bounty Hunter</title>
-    <link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:400,700,300,800' rel='stylesheet' type='text/css'>
+    <title>Bounty Hunter | Black Lion Chest</title>
     <link rel="stylesheet" href="styles/css/main.css">
     <script src="scripts/vendor/modernizr-dev.js"></script>
+    <script type="text/javascript">
+      (function() {
+        var config = {
+          kitId: 'pjg7hsj',
+          scriptTimeout: 3000
+        };
+        var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+      })();
+    </script>
   </head>
   <body>
+    <div role="banner">
+      <h1 class="brand">Black Lion Chest</h1>
+      <span class="tagline">Tools and resources for Guild Wars 2</span>
+    </div>
     <div role="main">
-      <header role="banner">
-        <h1 class="branding">GW2 Bounty Hunter</h1>
-      </head>
-      <select name="world_id" disabled>
-        <option value="0" selected>Loading Worlds…</option>
-      </select>
-      <p class="standfirst">A simple tool that shows whether or not a bounty is in combat on your chosen World.</p>
-      <p>Automatically updates every 20 seconds. Orange swords are shown over bounties currently in combat.</p>
-      <p class="activity-indicator">Updating…</p>
-      <ul class="bounties">
-        <li class="bounty-sotzz" data-background="1">
-          <span class="target">Sotzz the Scallywag</span>
-        </li>
-        <li class="bounty-trillia" data-background="2">
-          <span class="target">Trillia Midwell</span>
-        </li>
-        <li class="bounty-michiele" data-background="3">
-          <span class="target">Crusader Michiele</span>
-        </li>
-        <li class="bounty-mayana" data-background="4">
-          <span class="target">Big Mayana</span>
-        </li>
-        <li class="bounty-arderus" data-background="5">
-          <span class="target">Shaman Arderus</span>
-        </li>
-        <li class="bounty-2mult" data-background="6">
-          <span class="target">2-MULT</span>
-        </li>
-        <li class="bounty-trekksa" data-background="7">
-          <span class="target">Tricksy Trekksa</span>
-        </li>
-        <li class="bounty-tarban" data-background="8">
-          <span class="target">Diplomat Tarban</span>
-        </li>
-        <li class="bounty-yanonka" data-background="9">
-          <span class="target">Yanonka the Rat Wrangler</span>
-        </li>
-        <li class="bounty-poobadoo" data-background="10">
-          <span class="target">Poobadoo</span>
-        </li>
-        <li class="bounty-brekkabek" data-background="11">
-          <span class="target">Brekkabek</span>
-        </li>
-        <li class="bounty-prisoner" data-background="12">
-          <span class="target">Prisoner 1141</span>
-        </li>
-        <li class="bounty-komali" data-background="13">
-          <span class="target">Half–Baked Komali</span>
-        </li>
-        <li class="bounty-teesa" data-background="14">
-          <span class="target">Devious Teesa</span>
-        </li>
-        <li class="bounty-bwikki" data-background="15">
-          <span class="target">Bookworm Bwikki</span>
-        </li>
-        <li class="bounty-felix" data-background="16">
-          <span class="target">Short–Fuse Felix</span>
-        </li>
-        <li class="bounty-brooke" data-background="17">
-          <span class="target">“Deputy” Brooke</span>
-        </li>
-        <li class="bounty-ander" data-background="18">
-          <span class="target">Ander “Wildman” Westward</span>
-        </li>
-      </ul>
+      <div class="col col-1">
+        <header>
+          <h1 class="subheading">Bounty Hunter</h1>
+        </header>
+        <aside>
+          <p class="standfirst">A simple tool that shows whether or not a bounty is in combat on your chosen World.</p>
+          <p>Automatically updates every 20 seconds. Orange swords are shown over bounties currently in combat.</p>
+          <p>For help finding a bounty, look no further than <a href="http://dulfy.net/2013/02/27/gw2-guild-bounty-guide/" target="_blank">
+            Dulfy’s excellent guide</a>.</p>
+        </aside>
+      </div>
+      <div class="col col-2">
+        <select name="world_id" disabled>
+          <option value="0" selected>Loading Worlds…</option>
+        </select>
+        <p class="activity-indicator">Updating…</p>
+        <ul class="bounties">
+          <li class="bounty-sotzz" data-inactive data-background="1">
+            <span class="target">Sotzz the Scallywag</span>
+          </li>
+          <li class="bounty-trillia" data-inactive data-background="2">
+            <span class="target">Trillia Midwell</span>
+          </li>
+          <li class="bounty-michiele" data-inactive data-background="3">
+            <span class="target">Crusader Michiele</span>
+          </li>
+          <li class="bounty-mayana" data-inactive data-background="4">
+            <span class="target">Big Mayana</span>
+          </li>
+          <li class="bounty-arderus" data-inactive data-background="5">
+            <span class="target">Shaman Arderus</span>
+          </li>
+          <li class="bounty-2mult" data-inactive data-background="6">
+            <span class="target">2-MULT</span>
+          </li>
+          <li class="bounty-trekksa" data-inactive data-background="7">
+            <span class="target">Tricksy Trekksa</span>
+          </li>
+          <li class="bounty-tarban" data-inactive data-background="8">
+            <span class="target">Diplomat Tarban</span>
+          </li>
+          <li class="bounty-yanonka" data-inactive data-background="9">
+            <span class="target">Yanonka the Rat Wrangler</span>
+          </li>
+          <li class="bounty-poobadoo" data-inactive data-background="10">
+            <span class="target">Poobadoo</span>
+          </li>
+          <li class="bounty-brekkabek" data-inactive data-background="11">
+            <span class="target">Brekkabek</span>
+          </li>
+          <li class="bounty-prisoner" data-inactive data-background="12">
+            <span class="target">Prisoner 1141</span>
+          </li>
+          <li class="bounty-komali" data-inactive data-background="13">
+            <span class="target">Half–Baked Komali</span>
+          </li>
+          <li class="bounty-teesa" data-inactive data-background="14">
+            <span class="target">Devious Teesa</span>
+          </li>
+          <li class="bounty-bwikki" data-inactive data-background="15">
+            <span class="target">Bookworm Bwikki</span>
+          </li>
+          <li class="bounty-felix" data-inactive data-background="16">
+            <span class="target">Short–Fuse Felix</span>
+          </li>
+          <li class="bounty-brooke" data-inactive data-background="17">
+            <span class="target">“Deputy” Brooke</span>
+          </li>
+          <li class="bounty-ander" data-inactive data-background="18">
+            <span class="target">Ander “Wildman” Westward</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <script data-main="scripts/main" src="scripts/vendor/require.js"></script>
     <script>
