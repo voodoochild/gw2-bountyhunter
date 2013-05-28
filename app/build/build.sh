@@ -1,5 +1,6 @@
 r.js -o app/build/app.build.js
 cd dist
+find . -name '*.DS_Store' -type f -delete
 rm -rf build build.txt
 cd styles
 rm -rf imports sass
