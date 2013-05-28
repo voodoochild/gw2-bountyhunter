@@ -418,12 +418,11 @@ body {
 /* line 15, ../sass/main.scss */
 a {
   color: #666;
-  font-weight: bold;
   border-bottom: 1px dotted #666;
   text-decoration: none;
 }
 
-/* line 22, ../sass/main.scss */
+/* line 21, ../sass/main.scss */
 select {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -441,13 +440,13 @@ select {
   vertical-align: middle;
   width: 220px;
 }
-/* line 39, ../sass/main.scss */
+/* line 38, ../sass/main.scss */
 select:disabled {
   cursor: default;
   opacity: 0.5;
 }
 
-/* line 45, ../sass/main.scss */
+/* line 44, ../sass/main.scss */
 [role="banner"] {
   background-image: url(../../images/chest.png);
   background-position: top right;
@@ -458,58 +457,88 @@ select:disabled {
   margin: 0 auto;
   width: 80%;
 }
-/* line 55, ../sass/main.scss */
+/* line 54, ../sass/main.scss */
 [role="banner"] .brand {
   display: inline-block;
   font-weight: 300;
-  width: 27%;
+  line-height: 1;
+  margin: 1em 0;
+  margin-right: 2%;
+  width: 25%;
 }
-/* line 61, ../sass/main.scss */
+/* line 63, ../sass/main.scss */
 [role="banner"] .subheading {
   display: inline-block;
   font-size: 2em;
+  line-height: 1;
+  margin: 1em 0;
+  margin-left: -0.4%;
+}
+@media only screen and (min-width: 0px) and (max-width: 1170px) {
+  /* line 72, ../sass/main.scss */
+  [role="banner"] .brand, [role="banner"] .subheading {
+    font-size: 1.75em;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 1030px) {
+  /* line 78, ../sass/main.scss */
+  [role="banner"] .brand, [role="banner"] .subheading {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 869px) {
+  /* line 84, ../sass/main.scss */
+  [role="banner"] .brand, [role="banner"] .subheading {
+    font-size: 1.25em;
+  }
 }
 
-/* line 67, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 [role="main"] {
   clear: both;
   margin: 0 auto;
   width: 80%;
 }
-/* line 72, ../sass/main.scss */
+/* line 95, ../sass/main.scss */
 [role="main"] .subheading {
   font-size: 1.5em;
   line-height: 30px;
   margin-top: 6px;
 }
 
-/* line 79, ../sass/main.scss */
+/* line 102, ../sass/main.scss */
 .col {
   float: left;
 }
 
-/* line 83, ../sass/main.scss */
+/* line 106, ../sass/main.scss */
 .col-1 {
   width: 25%;
 }
 
-/* line 87, ../sass/main.scss */
+/* line 110, ../sass/main.scss */
 .col-2 {
   margin-left: 2%;
   width: 73%;
 }
 
-/* line 92, ../sass/main.scss */
+/* line 115, ../sass/main.scss */
 aside {
+  font-weight: 300;
   line-height: 1.5;
 }
 
-/* line 96, ../sass/main.scss */
+/* line 120, ../sass/main.scss */
 .standfirst {
   font-weight: bold;
 }
 
-/* line 100, ../sass/main.scss */
+/* line 124, ../sass/main.scss */
+.about {
+  border-top: 1px dotted #ccc;
+}
+
+/* line 128, ../sass/main.scss */
 .activity-indicator {
   background-image: url(../../images/loading.gif);
   background-position: center right;
@@ -528,20 +557,20 @@ aside {
   -o-transition: opacity 0.15s ease-in;
   transition: opacity 0.15s ease-in;
 }
-/* line 118, ../sass/main.scss */
+/* line 146, ../sass/main.scss */
 .activity-indicator.visible {
   opacity: 1;
   filter: alpha(opacity=1);
 }
 
-/* line 124, ../sass/main.scss */
+/* line 152, ../sass/main.scss */
 .bounties {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 130, ../sass/main.scss */
+/* line 158, ../sass/main.scss */
 [class^="bounty-"] {
   background-color: #666;
   background-position: bottom left;
@@ -559,7 +588,7 @@ aside {
   -o-transition: opacity 0.15s ease-in;
   transition: opacity 0.15s ease-in;
 }
-/* line 147, ../sass/main.scss */
+/* line 175, ../sass/main.scss */
 [class^="bounty-"] .target {
   color: #fff;
   font-size: 1.5em;
@@ -571,7 +600,7 @@ aside {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
   z-index: 3;
 }
-/* line 158, ../sass/main.scss */
+/* line 186, ../sass/main.scss */
 [class^="bounty-"]::before {
   background-image: url(../../images/pattern.png);
   background-position: bottom left;
@@ -586,15 +615,15 @@ aside {
   left: 0;
   z-index: 2;
 }
-/* line 170, ../sass/main.scss */
+/* line 198, ../sass/main.scss */
 [class^="bounty-"][data-inactive] {
   opacity: 0.7;
 }
-/* line 174, ../sass/main.scss */
+/* line 202, ../sass/main.scss */
 [class^="bounty-"][data-active] {
   opacity: 1;
 }
-/* line 177, ../sass/main.scss */
+/* line 205, ../sass/main.scss */
 [class^="bounty-"][data-active]::after {
   color: orange;
   content: '⚔';
