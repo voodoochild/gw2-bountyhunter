@@ -455,90 +455,73 @@ select:disabled {
   clear: both;
   color: #333;
   margin: 0 auto;
+  position: relative;
   width: 80%;
 }
-/* line 54, ../sass/main.scss */
+/* line 55, ../sass/main.scss */
 [role="banner"] .brand {
   display: inline-block;
   font-weight: 300;
   line-height: 1;
-  margin: 1em 0;
-  margin-right: 2%;
-  width: 25%;
+  margin: 0.7em 0;
+  position: absolute;
+  right: 100px;
 }
-/* line 63, ../sass/main.scss */
+/* line 64, ../sass/main.scss */
 [role="banner"] .subheading {
   display: inline-block;
   font-size: 2em;
   line-height: 1;
-  margin: 1em 0;
-  margin-left: -0.4%;
-}
-@media only screen and (min-width: 0px) and (max-width: 1170px) {
-  /* line 72, ../sass/main.scss */
-  [role="banner"] .brand, [role="banner"] .subheading {
-    font-size: 1.75em;
-  }
-}
-@media only screen and (min-width: 0px) and (max-width: 1030px) {
-  /* line 78, ../sass/main.scss */
-  [role="banner"] .brand, [role="banner"] .subheading {
-    font-size: 1.5em;
-  }
-}
-@media only screen and (min-width: 0px) and (max-width: 869px) {
-  /* line 84, ../sass/main.scss */
-  [role="banner"] .brand, [role="banner"] .subheading {
-    font-size: 1.25em;
-  }
+  margin: 0.7em 0;
 }
 
-/* line 90, ../sass/main.scss */
+/* line 72, ../sass/main.scss */
 [role="main"] {
   clear: both;
   margin: 0 auto;
   width: 80%;
 }
-/* line 95, ../sass/main.scss */
+/* line 77, ../sass/main.scss */
 [role="main"] .subheading {
   font-size: 1.5em;
   line-height: 30px;
   margin-top: 6px;
 }
 
-/* line 102, ../sass/main.scss */
+/* line 84, ../sass/main.scss */
 .col {
   float: left;
 }
 
-/* line 106, ../sass/main.scss */
+/* line 88, ../sass/main.scss */
 .col-1 {
   width: 25%;
 }
 
-/* line 110, ../sass/main.scss */
+/* line 92, ../sass/main.scss */
 .col-2 {
   margin-left: 2%;
   width: 73%;
 }
 
-/* line 115, ../sass/main.scss */
+/* line 97, ../sass/main.scss */
 aside {
   font-weight: 300;
   line-height: 1.5;
 }
 
-/* line 120, ../sass/main.scss */
+/* line 102, ../sass/main.scss */
 .standfirst {
+  color: #333;
   font-weight: bold;
 }
 
-/* line 124, ../sass/main.scss */
+/* line 107, ../sass/main.scss */
 .about {
   border-top: 1px dotted #ccc;
 }
 
-/* line 128, ../sass/main.scss */
+/* line 111, ../sass/main.scss */
 .activity-indicator {
   background-image: url(../../images/loading.gif);
   background-position: center right;
@@ -557,20 +540,20 @@ aside {
   -o-transition: opacity 0.15s ease-in;
   transition: opacity 0.15s ease-in;
 }
-/* line 146, ../sass/main.scss */
+/* line 129, ../sass/main.scss */
 .activity-indicator.visible {
   opacity: 1;
   filter: alpha(opacity=1);
 }
 
-/* line 152, ../sass/main.scss */
+/* line 135, ../sass/main.scss */
 .bounties {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 158, ../sass/main.scss */
+/* line 141, ../sass/main.scss */
 [class^="bounty-"] {
   background-color: #666;
   background-position: bottom left;
@@ -588,7 +571,7 @@ aside {
   -o-transition: opacity 0.15s ease-in;
   transition: opacity 0.15s ease-in;
 }
-/* line 175, ../sass/main.scss */
+/* line 158, ../sass/main.scss */
 [class^="bounty-"] .target {
   color: #fff;
   font-size: 1.5em;
@@ -600,7 +583,7 @@ aside {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
   z-index: 3;
 }
-/* line 186, ../sass/main.scss */
+/* line 169, ../sass/main.scss */
 [class^="bounty-"]::before {
   background-image: url(../../images/pattern.png);
   background-position: bottom left;
@@ -615,15 +598,15 @@ aside {
   left: 0;
   z-index: 2;
 }
-/* line 198, ../sass/main.scss */
+/* line 181, ../sass/main.scss */
 [class^="bounty-"][data-inactive] {
   opacity: 0.7;
 }
-/* line 202, ../sass/main.scss */
+/* line 185, ../sass/main.scss */
 [class^="bounty-"][data-active] {
   opacity: 1;
 }
-/* line 205, ../sass/main.scss */
+/* line 188, ../sass/main.scss */
 [class^="bounty-"][data-active]::after {
   color: orange;
   content: '⚔';

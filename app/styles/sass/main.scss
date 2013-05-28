@@ -49,41 +49,23 @@ select {
     clear: both;
     color: #333;
     margin: 0 auto;
+    position: relative;
     width: 80%;
 
     .brand {
         display: inline-block;
         font-weight: 300;
         line-height: 1;
-        margin: 1em 0;
-        margin-right: 2%;
-        width: 25%;
+        margin: 0.7em 0;
+        position: absolute;
+        right: 100px;
     }
 
     .subheading {
         display: inline-block;
         font-size: 2em;
         line-height: 1;
-        margin: 1em 0;
-        margin-left: -0.4%;
-    }
-
-    @media only screen and (min-width: 0px) and (max-width: 1170px) {
-        .brand, .subheading {
-            font-size: 1.75em;
-        }
-    }
-
-    @media only screen and (min-width: 0px) and (max-width: 1030px) {
-        .brand, .subheading {
-            font-size: 1.5em;
-        }
-    }
-
-    @media only screen and (min-width: 0px) and (max-width: 869px) {
-        .brand, .subheading {
-            font-size: 1.25em;
-        }
+        margin: 0.7em 0;
     }
 }
 
@@ -118,6 +100,7 @@ aside {
 }
 
 .standfirst {
+    color: #333;
     font-weight: bold;
 }
 

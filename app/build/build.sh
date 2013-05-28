@@ -7,7 +7,5 @@ rm -rf imports sass
 cd ../scripts
 rm -rf bounties.js libs
 mv vendor/require.js .
-mv vendor/modernizr-dev.js .
 rm vendor/*
 mv require.js vendor/
-mv modernizr-dev.js vendor/
