@@ -13,12 +13,10 @@
     }
   });
 
-  define('modernizr', [], Modernizr);
-
-  require(['domReady', 'lodash', 'bonzo', 'qwery', 'bean', 'modernizr',
+  require(['domReady', 'lodash', 'bonzo', 'qwery', 'bean',
            'blc', 'bounties'],
 
-  function(domReady, _, bonzo, qwery, bean, modernizr, blc, bounties) {
+  function(domReady, _, bonzo, qwery, bean, blc, bounties) {
 
     function $(selector) {
       return bonzo(qwery(selector));
@@ -65,7 +63,7 @@
       var updateBountyStatuses = function(world_id) {
         var completed = 0;
         if (world_id) {
-          activity.css('opacity', 1);
+          activity.addClass('visible');
           _.each(bounties, function(event_id, bounty) {
             blc.events(world_id, event_id).then(function(response) {
               var el = $('.bounty-' + bounty);
@@ -78,7 +76,7 @@
                   .removeAttr('data-active');
               }
               if (++completed === bounty_els.length) {
-                activity.css('opacity', 0);
+                activity.removeClass('visible');
               }
             });
           });
@@ -86,7 +84,7 @@
       };
 
       var resetBounties = function() {
-        activity.css('opacity', 0);
+        activity.removeClass('visible');
         bounty_els.removeAttr('data-active')
                   .attr('data-inactive', 'true');
       };

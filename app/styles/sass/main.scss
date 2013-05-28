@@ -3,6 +3,10 @@ $serif: Georgia, sans-serif;
 
 @import "normalize.scss";
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     color: #666;
     font-family: $sans-serif;
@@ -39,34 +43,24 @@ select {
 }
 
 [role="banner"] {
+    background-image: url(../../images/chest.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: contain;
     clear: both;
     color: #333;
     margin: 0 auto;
     width: 80%;
 
     .brand {
-        background-image: url(../../images/chest.png);
-        background-position: top right;
-        background-repeat: no-repeat;
-        background-size: contain;
         display: inline-block;
-        font-size: 3em;
-        font-weight: normal;
-        line-height: 1;
-        margin: 0.5em 0;
-        padding-right: 1em;
-
-        .wf-loading & {
-            font-family: $serif;
-        }
-
-        .wf-active & {
-            font-family: "bree-serif", $serif;
-        }
+        font-weight: 300;
+        width: 27%;
     }
 
-    .tagline {
-
+    .subheading {
+        display: inline-block;
+        font-size: 2em;
     }
 }
 
@@ -95,6 +89,10 @@ select {
     width: 73%;
 }
 
+aside {
+    line-height: 1.5;
+}
+
 .standfirst {
     font-weight: bold;
 }
@@ -103,17 +101,24 @@ select {
     background-image: url(../../images/loading.gif);
     background-position: center right;
     background-repeat: no-repeat;
+    cursor: default;
     display: inline-block;
     font-size: 0.75em;
     font-weight: bold;
     line-height: 30px;
     margin-left: 2em;
     opacity: 0;
+    filter: alpha(opacity=0);
     padding-right: 20px;
     -webkit-transition: opacity 0.15s ease-in;
     -moz-transition: opacity 0.15s ease-in;
     -o-transition: opacity 0.15s ease-in;
     transition: opacity 0.15s ease-in;
+
+    &.visible {
+        opacity: 1;
+        filter: alpha(opacity=1);
+    }
 }
 
 .bounties {
