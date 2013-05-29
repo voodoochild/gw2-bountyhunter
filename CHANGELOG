@@ -1,3 +1,13 @@
+v0.1.2:
+  date: 2013-05-29
+  changes:
+    - Changed the crossed swords to a diamond so it works on Windows.
+
+v0.1.1:
+  date: 2013-05-28
+  changes:
+    - Changed the layout and added more information.
+
 v0.1.0:
   date: 2013-05-24
   changes:

@@ -54,11 +54,12 @@ select {
 
     .brand {
         display: inline-block;
+        font-size: 1.5em;
         font-weight: 300;
-        line-height: 1;
-        margin: 0.7em 0;
+        line-height: 1.333333333;
+        margin: 1em 0;
         position: absolute;
-        right: 100px;
+        right: 90px;
     }
 
     .subheading {
@@ -73,12 +74,6 @@ select {
     clear: both;
     margin: 0 auto;
     width: 80%;
-
-    .subheading {
-        font-size: 1.5em;
-        line-height: 30px;
-        margin-top: 6px;
-    }
 }
 
 .col {
@@ -187,9 +182,9 @@ aside {
 
         &::after {
             color: orange;
-            content: '⚔';
+            content: '◆';
             display: block;
-            font-size: 3em;
+            font-size: 2em;
             line-height: 1;
             position: absolute;
             right: 0.2em; top: 0;
